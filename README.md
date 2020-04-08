@@ -28,6 +28,7 @@ docker-compose up -d nginx mysql redis workspace
 ```
 
 4. 建立 SQL 資料
+
 連接 laradock 的 mysql (127.0.0.1:3306)<br>
 帳號：root, 密碼：root<br>
 手動建置 mysql database => laravel_DB <br>
