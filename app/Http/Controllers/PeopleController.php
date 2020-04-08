@@ -120,8 +120,10 @@ class PeopleController extends Controller
      */
     public function destroy($id)
     {
-        PeopleInterest::where('people_id',$id)->delete();
-        People::where('id',$id)->delete();
+        $DestroyPeople = People::where('id',$id)->first();
+        $DestroyPeople->interest()->detach();
+        $DestroyPeople->destroy($id);
+        $DestroyPeople->save();
         return Redirect::to('people')->with('success','Product deleted successfully');
     }
 }

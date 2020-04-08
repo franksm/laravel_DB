@@ -102,8 +102,10 @@ class InterestController extends Controller
      */
     public function destroy($id)
     {
-        PeopleInterest::where('interest_id',$id)->delete();
-        Interest::where('id',$id)->delete();
+        $DestroyInterest = Interest::where('id',$id)->first();
+        $DestroyInterest->people()->detach();
+        $DestroyInterest->destroy($id);
+        $DestroyInterest->save();
         return Redirect::to('interest')->with('success','Product deleted successfully');
     }
 }
