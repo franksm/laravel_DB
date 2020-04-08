@@ -46,7 +46,7 @@
         <strong>Interest</strong><br>
         <select class="selectInterest" style="width:100%;" name="interests[]" multiple="multiple" required>
             @foreach ($interests as $interest)
-                <option value={{ $interest->id }}'>{{$interest->interest}}</option>
+                <option value='{{ $interest->id }}'>{{$interest->interest}}</option>
             @endforeach
         </select>
     </div>
