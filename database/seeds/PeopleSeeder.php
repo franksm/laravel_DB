@@ -12,10 +12,7 @@ class PeopleSeeder extends Seeder
      */
     public function run()
     {
-        $newPeople = new People();
-        $newPeople->name = 'frank';
-        $newPeople->age='25';
-        $newPeople->born='1995/04/29';
-        $newPeople->save();
+        People::truncate();
+        factory(People::class,10)->create();
     }
 }

@@ -1,6 +1,8 @@
 <?php
 
 use App\PeopleInterest;
+use App\People;
+use App\Interest;
 use Illuminate\Database\Seeder;
 
 class PeopleInterestSeeder extends Seeder
@@ -12,14 +14,12 @@ class PeopleInterestSeeder extends Seeder
      */
     public function run()
     {
-        $newTag = new PeopleInterest();
-        $newTag->people_id = 1;
-        $newTag->interest_id = 1;
-        $newTag->save();
-
-        $newTag = new PeopleInterest();
-        $newTag->people_id = 1;
-        $newTag->interest_id = 2;
-        $newTag->save();
+        PeopleInterest::truncate();
+        $interest = Interest::all();
+        People::all()->each(function ($people) use ($interest) {
+            $people->interest()->attach(
+                $interest->random(rand(1, $interest->count()))->pluck('id')->toArray()
+            );
+        });
     }
 }
