@@ -22,6 +22,7 @@
   <body>
     <div class="container">
       <br><br><br>
+      @include('layouts.navbar')
       @yield('content')
     </div>
   </body>

@@ -1,4 +1,4 @@
-@extends('interest.layout')
+@extends('layouts.layout')
  
 @section('content')
 

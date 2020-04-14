@@ -1,5 +1,5 @@
-@extends('interest.layout')
-   
+@extends('layouts.layout')
+@section('nav_interest', 'active')
 @section('content')
   <a href="{{ route('interest.create') }}" class="btn btn-success mb-2">Add</a> 
   <br>
