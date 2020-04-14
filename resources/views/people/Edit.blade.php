@@ -1,5 +1,5 @@
 @extends('layouts.layout')
- 
+@section('header_title', 'Edit People')
 @section('content')
 
 <script
@@ -16,7 +16,6 @@
     });
 </script>
 
-<h2 style="margin-top: 12px;" class="text-center">Edit People</a></h2>
 <br>
  
 <form action="{{ route('people.update', $people_info->id) }}" method="POST" name="update_people">

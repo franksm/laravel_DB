@@ -1,4 +1,5 @@
 @extends('layouts.layout')
+@section('header_title', 'People List')
 @section('nav_people', 'active')
 @section('content')
   <a href="{{ route('people.create') }}" class="btn btn-success mb-2">Add</a> 

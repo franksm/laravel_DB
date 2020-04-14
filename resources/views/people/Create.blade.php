@@ -1,5 +1,5 @@
 @extends('layouts.layout')
- 
+@section('header_title', 'Add People')
 @section('content')
 
 <script
@@ -14,7 +14,6 @@
     });
 </script>
 
-<h2 style="margin-top: 12px;" class="text-center">Add People</a></h2>
 <br>
  
 <form action="{{ route('people.store') }}" method="POST" name="add_people">

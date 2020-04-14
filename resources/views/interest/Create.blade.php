@@ -1,8 +1,7 @@
 @extends('layouts.layout')
- 
+@section('header_title', 'Add Interest')
 @section('content')
 
-<h2 style="margin-top: 12px;" class="text-center">Add Interest</a></h2>
 <br>
  
 <form action="{{ route('interest.store') }}" method="POST" name="add_interest">

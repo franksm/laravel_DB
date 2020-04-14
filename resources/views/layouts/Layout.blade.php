@@ -19,9 +19,10 @@
     }
     </style>
   </head>
+  
   <body>
     <div class="container">
-      <br><br><br>
+      @include('layouts.header')
       @include('layouts.navbar')
       @yield('content')
     </div>
